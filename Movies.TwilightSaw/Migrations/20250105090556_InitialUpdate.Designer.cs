@@ -11,8 +11,8 @@ using Movies.TwilightSaw.Data;
 namespace Movies.TwilightSaw.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250102181021_AddSeries")]
-    partial class AddSeries
+    [Migration("20250105090556_InitialUpdate")]
+    partial class InitialUpdate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -63,7 +63,7 @@ namespace Movies.TwilightSaw.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("EpisodeNumber")
+                    b.Property<int>("Episodes")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")

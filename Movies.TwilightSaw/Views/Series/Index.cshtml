@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Movies.TwilightSaw.Models.Movie>
+﻿@model IEnumerable<Movies.TwilightSaw.Models.Series>
 
 @{
     ViewData["Title"] = "Index";
@@ -20,10 +20,13 @@
             </div>
             <div class="element-details">
                 <div>
-                    @Html.DisplayFor(modelItem => item.Name)
+                   @Html.DisplayFor(modelItem => item.Name)
                 </div>
                 <div>
                     @Html.DisplayNameFor(model => model.Score): @Html.DisplayFor(modelItem => item.Score)
+                </div>
+                <div>
+                    @Html.DisplayNameFor(model => model.Episodes): @Html.DisplayFor(modelItem => item.Episodes)
                 </div>
             </div>
             <div class="element-details" id="el2">

@@ -2,19 +2,18 @@
 using Microsoft.EntityFrameworkCore;
 using Movies.TwilightSaw.Data;
 using Movies.TwilightSaw.Models;
-using System.Linq;
 
 namespace Movies.TwilightSaw.Controllers
 {
-    public class MoviesController(AppDbContext context) : Controller
+    public class SeriesController(AppDbContext context) : Controller
     {
         // GET: Movies
         [HttpGet]
         public async Task<IActionResult> Index(string searchQuery)
         {
             return searchQuery == null
-                ? View(await context.Movies.ToListAsync())
-                : View(await context.Movies.Where(s => s.Name.ToLower().Contains(searchQuery.ToLower())).ToListAsync());
+                ? View(await context.Series.ToListAsync())
+                : View(await context.Series.Where(s => s.Name.ToLower().Contains(searchQuery.ToLower())).ToListAsync());
 
         }
 
@@ -22,10 +21,10 @@ namespace Movies.TwilightSaw.Controllers
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null) return NotFound();
-            var movie = await context.Movies.FirstOrDefaultAsync(m => m.Id == id);
-            if (movie == null) return NotFound();
+            var series = await context.Series.FirstOrDefaultAsync(m => m.Id == id);
+            if (series == null) return NotFound();
 
-            return View(movie);
+            return View(series);
         }
 
         // GET: Movies/Create
@@ -37,44 +36,44 @@ namespace Movies.TwilightSaw.Controllers
         // POST: Movies/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Description,Score,Image")] Movie movie)
+        public async Task<IActionResult> Create([Bind("Id,Name,Description,Score,Episodes,Image")] Series series)
         {
             if (ModelState.IsValid)
             {
-                context.Add(movie);
+                context.Add(series);
                 await context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(movie);
+            return View(series);
         }
 
         // GET: Movies/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null) return NotFound();
-            var movie = await context.Movies.FindAsync(id);
-            if (movie == null) return NotFound();
+            var series = await context.Series.FindAsync(id);
+            if (series == null) return NotFound();
 
-            return View(movie);
+            return View(series);
         }
 
         // POST: Movies/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Description,Score,Image")] Movie movie)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Description,Score,Episodes,Image")] Series series)
         {
-            if (id != movie.Id) return NotFound();
+            if (id != series.Id) return NotFound();
         
             if (ModelState.IsValid)
             {
                 try
                 {
-                    context.Update(movie);
+                    context.Update(series);
                     await context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!MovieExists(movie.Id))
+                    if (!MovieExists(series.Id))
                     {
                         return NotFound();
                     }
@@ -82,17 +81,17 @@ namespace Movies.TwilightSaw.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(movie);
+            return View(series);
         }
 
         // GET: Movies/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null) return NotFound();
-            var movie = await context.Movies.FirstOrDefaultAsync(m => m.Id == id);
-            if (movie == null) return NotFound();
+            var series = await context.Series.FirstOrDefaultAsync(m => m.Id == id);
+            if (series == null) return NotFound();
 
-            return View(movie);
+            return View(series);
         }
 
         // POST: Movies/Delete/5
@@ -100,8 +99,8 @@ namespace Movies.TwilightSaw.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var movie = await context.Movies.FindAsync(id);
-            if (movie != null) context.Movies.Remove(movie);
+            var series = await context.Series.FindAsync(id);
+            if (series != null) context.Series.Remove(series);
             await context.SaveChangesAsync();
 
             return RedirectToAction(nameof(Index));
@@ -109,7 +108,7 @@ namespace Movies.TwilightSaw.Controllers
 
         private bool MovieExists(int id)
         {
-            return context.Movies.Any(e => e.Id == id);
+            return context.Series.Any(e => e.Id == id);
         }
     }
 }

@@ -24,6 +24,22 @@ namespace Movies.TwilightSaw.Migrations
                 {
                     table.PrimaryKey("PK_Movies", x => x.Id);
                 });
+
+            migrationBuilder.CreateTable(
+                name: "Series",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Score = table.Column<int>(type: "int", nullable: false),
+                    EpisodeNumber = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Series", x => x.Id);
+                });
         }
 
         /// <inheritdoc />
@@ -31,6 +47,9 @@ namespace Movies.TwilightSaw.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Movies");
+
+            migrationBuilder.DropTable(
+                name: "Series");
         }
     }
 }

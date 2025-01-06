@@ -18,5 +18,63 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    background-attachment: fixed;
+    background-image: url('/lib/background.PNG');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Poiret One', sans-serif;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+.search {
+    display: flex;
+    gap: 25px;
+}
+
+.element {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    text-align: center;
+}
+
+.element-image {
+    width: 80px;
+    height: 100px;
+}
+
+.block {
+    padding: 10px;
+    border-style: ridge;
+    margin-top: 10px;
+    outline: none;
+}
+
+.element-plus {
+    width: 80px;
+    height: 100px;
+    
+}
+
+    .element-plus:hover {
+        opacity: 0.5;
+    }
+
+.center-image {
+    width: 89%;
+}
+
+.create, .create:hover {
+    color: transparent;
+}
+
+   #el2 {
+       margin-left: auto;
+   }
+
+.element-details {
+    text-align:left;
 }
