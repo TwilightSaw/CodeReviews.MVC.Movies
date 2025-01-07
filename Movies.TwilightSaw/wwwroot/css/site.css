@@ -29,26 +29,20 @@ body {
     padding: 0;
 }
 
-.search {
-    display: flex;
-    gap: 25px;
-}
-
 .element {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    text-align: center;
+    display: grid;
+    grid-template-columns: 0.3fr 0.35fr 2fr 0.25fr;
 }
 
-.element-image {
-    width: 80px;
-    height: 100px;
-}
+    .image {
+        width: 80px;
+        height: 100px;
+
+    }
 
 .block {
     padding: 10px;
-    border-style: ridge;
+    border: 1px solid #ccc;
     margin-top: 10px;
     outline: none;
 }
@@ -56,25 +50,44 @@ body {
 .element-plus {
     width: 80px;
     height: 100px;
-    
 }
 
     .element-plus:hover {
         opacity: 0.5;
     }
 
-.center-image {
+.add-image {
     width: 89%;
-}
-
-.create, .create:hover {
-    color: transparent;
+    text-align: center;
 }
 
    #el2 {
-       margin-left: auto;
+       margin-left: 50px;
    }
 
 .element-details {
-    text-align:left;
+    justify-self: start;
+}
+
+.element-add {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.link-input {
+    padding: 0; /* Прибираємо внутрішні відступи */
+    border: none; /* Забираємо рамку */
+    background: none; /* Забираємо фон */
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.link-input:hover {
+    color: blue;
 }

@@ -5,9 +5,9 @@
 }
 
 <div class="search">
-    <form method="get">
-        <input type="text" name="searchQuery" placeholder="Search series..." />
-        <button type="submit">Search</button>
+    <form class="search-form" method="get">
+        <input id="el1" type="text" name="searchQuery" placeholder="Search series..." />
+        <button class="search-button" type="submit">Search</button>
     </form>
 </div>
 
@@ -15,12 +15,12 @@
 {
     <div class="block">
         <div class="element">
-            <div>
-                <img class="element-image" src=" @Html.DisplayFor(modelItem => item.Image)" alt="">
+            <div class="element-image">
+                <img class="image" src=" @Html.DisplayFor(modelItem => item.Image)" alt="">
             </div>
             <div class="element-details">
                 <div>
-                   @Html.DisplayFor(modelItem => item.Name)
+                    @Html.DisplayFor(modelItem => item.Name)
                 </div>
                 <div>
                     @Html.DisplayNameFor(model => model.Score): @Html.DisplayFor(modelItem => item.Score)
@@ -29,7 +29,10 @@
                     @Html.DisplayNameFor(model => model.Episodes): @Html.DisplayFor(modelItem => item.Episodes)
                 </div>
             </div>
-            <div class="element-details" id="el2">
+            <div class="element-description">
+                @Html.DisplayFor(modelItem => item.Description)
+            </div>
+            <div class="element-buttons" id="el2">
                 <div>
                     <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
                 </div>
@@ -40,25 +43,18 @@
                     <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
                 </div>
             </div>
-            <div>
-
-            </div>
         </div>
-        <div class="element-description">
-            @Html.DisplayFor(modelItem => item.Description)
-        </div>
+        
     </div>
 }
 <a asp-action="Create" class="create">
     <div class="block">
-        <div class="element">
+        <div class="element-add">
             <div>
-                <img class="element-image">
+                <img class="image">
             </div>
-            <div class="center-image">
-                <div>
-                    <img class="element-plus" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Plus_symbol.svg/1707px-Plus_symbol.svg.png">
-                </div>
+            <div class="add-image">
+                    <img class="element-plus" fill="currentColor" src="https://www.svgrepo.com/show/428613/plus.svg">
             </div>
         </div>
     </div>
