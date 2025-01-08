@@ -80,9 +80,9 @@ a {
 }
 
 .link-input {
-    padding: 0; /* Прибираємо внутрішні відступи */
-    border: none; /* Забираємо рамку */
-    background: none; /* Забираємо фон */
+    padding: 0; 
+    border: none;
+    background: none; 
     color: black;
     text-decoration: none;
     font-weight: bold;

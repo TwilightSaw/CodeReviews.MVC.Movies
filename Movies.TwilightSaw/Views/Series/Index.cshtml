@@ -37,10 +37,10 @@
                     <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
                 </div>
                 <div>
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a>
-                </div>
-                <div>
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    <form asp-route-id="@item.Id" asp-action="Delete">
+                        <input type="hidden" asp-for="@item.Id" />
+                        <input class="link-input" type="submit" value="Delete" />
+                    </form>
                 </div>
             </div>
         </div>

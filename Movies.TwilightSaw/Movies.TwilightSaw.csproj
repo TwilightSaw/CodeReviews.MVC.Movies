@@ -9,6 +9,7 @@
   <ItemGroup>
     <Folder Include="Factory\" />
     <Folder Include="Migrations\" />
+    <Folder Include="images\" />
   </ItemGroup>
 
   <ItemGroup>
