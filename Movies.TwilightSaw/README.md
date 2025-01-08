@@ -23,13 +23,15 @@
 
 ## Challenges and Learned Lessons
 - Doing this project was not very hard after the similar one made with Razor Pages, but classic MVC definitely gives you more space.
+- Scaffolding is a really useful feature that you can use for creating controllers from models and db and vice versa.
 
 ## Areas to Improve
-- Get better in Razor Pages and MVC in general.
+- Learn more about MVC.
 - Improve visual design with CSS, html, Bootstrap.
 - Start using JavaScript or TypeScript.
 
 ## Resources Used
 - C# Academy guidelines and roadmap.
-- ChatGPT for new information as Razor Pages, MVC, CSS, html, Bootstrap.
+- ChatGPT for new information as MVC, CSS, html, Bootstrap.
 - Various StackOverflow articles.
+- [Microsoft Guideline](https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/start-mvc?view=aspnetcore-9.0&tabs=visual-studio).
