@@ -31,7 +31,7 @@ body {
 
 .element {
     display: grid;
-    grid-template-columns: 0.3fr 0.35fr 2fr 0.25fr;
+    grid-template-columns: 0.23fr 0.37fr 2fr 0.25fr;
 }
 
     .image {
